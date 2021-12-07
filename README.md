@@ -7,7 +7,7 @@ PROJETO-API-PGSQL/Api-Banco-Postgres/ProjetoJS/public/script/db/_database.js
 
 Crie a tabela entrando na pasta raiz do projeto e rodando o comando:
 
-Api-Banco-Postgres/ProjetoJS/public/script/db/create.js
+$ node Api-Banco-Postgres/ProjetoJS/public/script/db/create.js
 
 # API
 
