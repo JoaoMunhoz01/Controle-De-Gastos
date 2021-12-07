@@ -1,6 +1,13 @@
 # PROJETO-API-PGSQL
 
-Neste projetos supomos que você já possua o postgres instalado e configurado
+Neste projetos supomos que você já possua o postgres instalado e configurado,
+não se esqueça de alterar as configurações de conexão com o banco, as configurações estão no arquivo:
+
+PROJETO-API-PGSQL/Api-Banco-Postgres/ProjetoJS/public/script/db/_database.js
+
+Crie a tabela entrando na pasta raiz do projeto e rodando o comando:
+
+Api-Banco-Postgres/ProjetoJS/public/script/db/create.js
 
 # API
 
