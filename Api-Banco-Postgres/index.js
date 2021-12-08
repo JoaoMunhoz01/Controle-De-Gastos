@@ -10,6 +10,15 @@ app.use(express.json());
 
 app.use(cors());
 
+app.get('/login', async (req, res) => {
+    res.
+        res.send("Está API está disponivel apenas para Requisições do tipo POST");
+});
+
+app.get('/register', async (req, res) => {
+    res.send("Está API está disponivel apenas para Requisições do tipo POST");
+});
+
 app.post('/login', async (req, res) => {
     let jsonReq = req.body;
     let resp = await login(jsonReq.myCredentials.Person.User, jsonReq.myCredentials.Person.Password);
