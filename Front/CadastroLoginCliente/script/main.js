@@ -28,7 +28,7 @@ async function login() {
             .then(response => response.json())
             .then(result => {
                 if (result.status == 1) {
-                    window.open('../views/welcome.html')
+                    window.open('../views/home.html')
                 }
                 else {
                     alert(result.responseMessage);

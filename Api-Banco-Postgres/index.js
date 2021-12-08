@@ -7,26 +7,22 @@ const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
+
 app.use(cors());
-
-
 
 app.post('/login', async (req, res) => {
     let jsonReq = req.body;
     let resp = await login(jsonReq.myCredentials.Person.User, jsonReq.myCredentials.Person.Password);
-    console.log(resp)
+    console.log(resp);
     res.json(resp);
-
-
 });
 
 app.post('/register', async (req, res) => {
     let jsonReq = req.body;
     let resp = await register(jsonReq.myData.Person.User, jsonReq.myData.Person.Password, jsonReq.myData.Person.fName, jsonReq.myData.Person.lName);
-    console.log(resp)
+    console.log(resp);
     res.json(resp);
 });
-
 
 app.listen(2001, () => {
     console.log(`Server started on http://localhost:2001`);
