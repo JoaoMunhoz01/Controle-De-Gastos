@@ -14,7 +14,8 @@ app.use(cors());
 app.post('/login', async (req, res) => {
     let jsonReq = req.body;
     let resp = await login(jsonReq.myCredentials.Person.User, jsonReq.myCredentials.Person.Password);
-    res.send(resp);
+    console.log(resp)
+    res.json(resp);
 
 
 });
@@ -22,7 +23,8 @@ app.post('/login', async (req, res) => {
 app.post('/register', async (req, res) => {
     let jsonReq = req.body;
     let resp = await register(jsonReq.myData.Person.User, jsonReq.myData.Person.Password, jsonReq.myData.Person.fName, jsonReq.myData.Person.lName);
-    res.send(resp);
+    console.log(resp)
+    res.json(resp);
 });
 
 
@@ -46,9 +48,6 @@ async function insertTables(user) {
             status: 1,
             responseMessage: 'Inserção completa'
         };
-
-
-
         return json;
 
     } catch (error) {
@@ -94,22 +93,29 @@ async function login(user, password) {
     var results;
 
     results = await selectTables(user, password);
-
-    if (results.rowCount == 1) {
-        var json = {
-            status: 1,
-            jsessionid: '1234',
-            responseBody: results
+    try {
+        if (results.rowCount == 1) {
+            var json = {
+                status: 1,
+                jsessionid: '1234',
+                responseBody: results
+            }
+            return json;
         }
-        return json;
-    }
-    else {
-        var json = {
+        else {
+            var json = {
+                status: 0,
+                responseMessage: 'Houve um Erro: Usuario ou Senha invalido'
+            }
+            return json;
+        }
+    } catch (error) {
+        return json = {
             status: 0,
-            responseMessage: 'Houve um Erro: Usuario ou Senha invalido'
+            responseMessage: 'Houve um Erro: ' + error
         }
-        return json;
     }
+
 
 }
 
@@ -118,7 +124,6 @@ async function selectTables(username, password) {
     await db.connect();
 
     try {
-
 
         var results;
 
