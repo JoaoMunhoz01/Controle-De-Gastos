@@ -28,7 +28,7 @@ async function login() {
             .then(response => response.json())
             .then(result => {
                 if (result.status == 1) {
-                    alert("Deu certo");
+                    window.open('../views/welcome.html')
                 }
                 else {
                     alert(result.responseMessage);
