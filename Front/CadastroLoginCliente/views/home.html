@@ -1,17 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../css/home.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script/main.js"></script>
     <title>Home</title>
 </head>
 
 <body>
     <div class="content">
         <div class="txt">Bem vindo</div>
+    </div>
+    <div class="container">
+        <h1 class="gastostittle">Neste mes estes foram seus gastos</h1>
+        <div class="table">
+            <table border="2">
+                <tr>
+                    <td>Nome</td>
+                    <td>Valor</td>
+                    <td>Data de Vencimento</td>
+                </tr>
+                <tr class="space"></tr>
+                <tr>
+                    <td>Nubank</td>
+                    <td>R$150,00</td>
+                    <td>01/01/01</td>
+                </tr>
+                <tr>
+                    <td>Next</td>
+                    <td>R$550,00</td>
+                    <td>01/01/01</td>
+                </tr>
+            </table>
+        </div>
+        <div id="id03" class="modal">
+            <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <form class="modal-content" action="/action_page.php">
+              <div class="box">
+                <h1>Adicionar gasto</h1>
+                <hr>
+        
+                <label for="email"><b>Nome</b></label>
+                <input type="text" placeholder="Informe o gasto" id="nomeGasto" name="email" required>
+        
+                <label for="email"><b>Valor</b></label>
+                <input type="text" placeholder="Informe o valor deste gasto" id="valGasto" name="email"  required>
+        
+                <label for="email"><b>Data de vencimento</b></label>
+                <input type="text" placeholder="Informe o dia de vencimento do gasto" id="dtvencGasto" name="email" required>
+        
+                <div class="clearfix">
+                  <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancelar</button>
+                  <button type="button" onclick="addGasto()" class="addgastobtn">Cadastrar gasto</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        <button type="button" class="addGasto" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Adicionar Gasto</button>
     </div>
 </body>
 

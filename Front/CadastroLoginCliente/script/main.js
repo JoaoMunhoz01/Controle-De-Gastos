@@ -16,6 +16,14 @@ window.onclick = function(event) {
         mod.style.display = "none";
     }
 }
+var mod2 = document.getElementById('id03');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == mod) {
+        mod2.style.display = "none";
+    }
+}
 
 async function login() {
     if (document.getElementById("usernameLog").value == "" ||
@@ -95,4 +103,51 @@ async function register() {
                 .catch(error => console.log('error', error));
         }
     }
+}
+
+async function addGasto(){
+    if (document.getElementById("nomeGasto").value == "" ||
+        document.getElementById("valGasto").value == "" ||
+        document.getElementById("dtvencGasto").value == "")  {
+
+        alert("Preencha os campos");
+
+    } else {
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var teste = {
+            "Nome": document.getElementById("nomeGasto").value,
+            "Valor": document.getElementById("valGasto").value,
+            "Datavenc": document.getElementById("dtvencGasto").value,
+            "User": "joao.munhoz"
+        }
+
+        console.log(teste);
+
+        var raw =  JSON.stringify({
+        "myData": {
+            "Gasto": {
+                "Nome": teste.Nome,
+                "Valor": teste.Valor,
+                "Datavenc": teste.Datavenc,
+                "User": teste.User
+            }
+        }
+        });
+
+        var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+        };
+
+        await fetch("http://localhost:2001/registerGasto", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+
+        }
 }

@@ -1,11 +1,129 @@
 body{
-    height: 100%;
-    width: 100%;
+    
+    background-image: url("https://5287aa00874a313e299d-1850966fc307ff23e1e789aeafd2476b.ssl.cf5.rackcdn.com/PostImagem/34245/fotos-de-paisagens_o1f9f3i2n715u211eeesevg41afbe.jpg");
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+  
 }
+table{
+    border-color: rgb(255, 255, 255, 0.3);
+    width: 100%;
+    
+}
+tr{
+    width: 100%;
+    
+}
+td{
+    width: 33.3%;
+}
+
+.space{
+    height: 10px;
+}
+
 .content{
     height: 100%;
     width: 100%;
     font-size: 48px;
     display: flex;
     justify-content: center;
+    color: aliceblue;
 }
+.gastostittle{
+    margin-left: 35%;
+}
+.container{
+    display: inline-block;
+    height: 500px;
+    width: 97%;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: rgb(255, 255, 255, 0.3);
+    color: rgb(168, 116, 189);
+}
+
+.box{
+    display: inline-block;
+    padding: 16px;
+    background-color: rgb(255, 255, 255, 0.6);
+    margin-left: 15%;
+}
+.clearfix{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.clearfix button{
+    width: auto;
+    height: 50px;
+    background-color: rgb(168, 116, 189);
+    color: white;
+    border: none;
+}
+
+.table{
+    background-color: rgb(255, 255, 255, 0.5);
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 60%;
+    width: 98.5%;
+    position: relative;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.addGasto{
+    margin-top: 30px;
+    margin-left: 47%;
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+    background-color: rgb(168, 116, 189);
+    color: white;
+    border: none;
+}
+span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: rgba(255, 255, 255, 0.0);;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }

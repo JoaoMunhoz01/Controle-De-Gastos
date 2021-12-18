@@ -11,11 +11,14 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/login', async (req, res) => {
-    res.
-        res.send("Está API está disponivel apenas para Requisições do tipo POST");
+    res.send("Está API está disponivel apenas para Requisições do tipo POST");
 });
 
 app.get('/register', async (req, res) => {
+    res.send("Está API está disponivel apenas para Requisições do tipo POST");
+});
+
+app.get('/registerGasto', async (req, res) => {
     res.send("Está API está disponivel apenas para Requisições do tipo POST");
 });
 
@@ -29,6 +32,13 @@ app.post('/login', async (req, res) => {
 app.post('/register', async (req, res) => {
     let jsonReq = req.body;
     let resp = await register(jsonReq.myData.Person.User, jsonReq.myData.Person.Password, jsonReq.myData.Person.fName, jsonReq.myData.Person.lName);
+    console.log(resp);
+    res.json(resp);
+});
+app.post('/registerGasto', async (req, res) => {
+    let jsonReq = req.body;
+    console.log(jsonReq)
+    let resp = await registerGasto(jsonReq.myData.Gasto.Nome, jsonReq.myData.Gasto.Valor, jsonReq.myData.Gasto.Datavenc, jsonReq.myData.Gasto.User);
     console.log(resp);
     res.json(resp);
 });
@@ -139,6 +149,61 @@ async function selectTables(username, password) {
         console.log('Seleção completa');
 
         return results;
+    } catch (error) {
+        return json = {
+            status: 0,
+            responseMessage: '' + error
+        }
+    }
+
+
+}
+
+async function insertTablesGasto(gasto) {
+
+    let db = require('./ProjetoJS/public/script/db/_database');
+    await db.connect();
+
+
+    try {
+        const queryPerson = 'INSERT INTO gastos (nome, valor, dtvenc, username) VALUES ($1, $2, $3, $4)';
+
+        await db.query(queryPerson, [gasto.Nome, gasto.Valor, gasto.Datavenc, gasto.User]);
+
+        var json = {
+            status: 1,
+            responseMessage: 'Inserção completa'
+        };
+        return json;
+
+    } catch (error) {
+
+
+
+        var json = {
+            status: 0,
+            responseMessage: 'Inserção incompleta ' + error
+        };
+
+        return json;
+    }
+
+}
+
+async function registerGasto(Name, val, dtvenc, userName) {
+
+    try {
+        var gasto = {
+            Nome: Name,
+            Valor: val,
+            Datavenc: dtvenc,
+            User: userName
+        };
+
+        let data = await insertTablesGasto(gasto);
+
+        return data;
+
     } catch (error) {
         return json = {
             status: 0,
