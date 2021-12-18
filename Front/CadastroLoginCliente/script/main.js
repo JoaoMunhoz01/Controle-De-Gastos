@@ -44,6 +44,9 @@ async function login() {
             }
         });
 
+        document.getElementById("usernameLog").value ="";
+        document.getElementById("passwordLog").value = "";
+
         var requestOptions = {
             method: 'POST',
             headers: myHeaders,
@@ -87,6 +90,11 @@ async function register() {
                     }
                 }
             });
+            document.getElementById("usernameReg").value ="";
+            document.getElementById("passwordReg").value = "";
+            document.getElementById("passwordRegConf").value = "";
+            document.getElementById("fNameReg").value ="";
+            document.getElementById("lNameReg").value = "";
     
             var requestOptions = {
                 method: 'POST',
