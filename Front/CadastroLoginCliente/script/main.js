@@ -124,7 +124,9 @@ async function addGasto(){
             "User": "joao.munhoz"
         }
 
-        console.log(teste);
+        document.getElementById("nomeGasto").value ="";
+        document.getElementById("valGasto").value = "";
+        document.getElementById("dtvencGasto").value = "";
 
         var raw =  JSON.stringify({
         "myData": {
@@ -146,8 +148,10 @@ async function addGasto(){
 
         await fetch("http://localhost:2001/registerGasto", requestOptions)
         .then(response => response.text())
-        .then(result => console.log(result))
+        .then(result => {
+            
+        })
         .catch(error => console.log('error', error));
 
-        }
+    }
 }

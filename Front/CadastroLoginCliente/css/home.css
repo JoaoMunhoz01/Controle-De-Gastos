@@ -44,6 +44,10 @@ td{
     background-color: rgb(255, 255, 255, 0.3);
     color: rgb(168, 116, 189);
 }
+.idgasto{
+    width: auto;
+    padding-right: 10px;
+}
 
 .box{
     display: inline-block;
