@@ -29,6 +29,13 @@ app.post('/login', async (req, res) => {
     res.json(resp);
 });
 
+app.post('/gastos', async (req, res) => {
+    let jsonReq = req.body;
+    let resp = await gasto(jsonReq.myData.Gasto.User);
+    console.log(resp);
+    res.json(resp);
+});
+
 app.post('/register', async (req, res) => {
     let jsonReq = req.body;
     let resp = await register(jsonReq.myData.Person.User, jsonReq.myData.Person.Password, jsonReq.myData.Person.fName, jsonReq.myData.Person.lName);
@@ -204,6 +211,59 @@ async function registerGasto(Name, val, dtvenc, userName) {
 
         return data;
 
+    } catch (error) {
+        return json = {
+            status: 0,
+            responseMessage: '' + error
+        }
+    }
+
+
+}
+
+async function gasto(user) {
+    var results;
+    results = await selectTablesGastos(user);
+    console.log(results)
+    try {
+        if (results.rowCount > 0) {
+            var json = {
+                status: 1,
+                responseBody: results
+            }
+            return json;
+        }
+        else {
+            var json = {
+                status: 0,
+                responseMessage: 'Você não possui gastos registrados'
+            }
+            return json;
+        }
+    } catch (error) {
+        return json = {
+            status: 0,
+            responseMessage: 'Houve um Erro: ' + error
+        }
+    }
+
+}
+
+async function selectTablesGastos(username) {
+    let db = require('./ProjetoJS/public/script/db/_database');
+    await db.connect();
+
+    try {
+
+        var results;
+
+        results = await db.query(`SELECT * FROM gastos WHERE gastos.username='${username}' ORDER BY gastos.id ASC`);
+
+
+
+        console.log('Seleção completa');
+
+        return results;
     } catch (error) {
         return json = {
             status: 0,

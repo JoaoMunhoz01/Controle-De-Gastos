@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/home.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../script/main.js"></script>
+    <script src="../script/apicalls.js"></script>
     <title>Home</title>
 </head>
 
@@ -17,7 +18,7 @@
     <div class="container">
         <h1 class="gastostittle">Neste mes estes foram seus gastos</h1>
         <div class="table">
-            <table border="2">
+            <table id="tablegastos" border="0">
                 <tr class="fields">
                     <td class="idgasto">ID</td>
                     <td>Nome</td>
@@ -25,12 +26,6 @@
                     <td>Data de Vencimento</td>
                 </tr>
                 <tr class="space"></tr>
-                <tr>
-                    <td class="idgasto">01</td>
-                    <td>Nubank</td>
-                    <td>R$150,00</td>
-                    <td>01/01/01</td>
-                </tr>
                 
             </table>
         </div>
