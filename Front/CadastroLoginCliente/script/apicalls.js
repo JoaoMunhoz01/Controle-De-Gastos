@@ -1,4 +1,3 @@
-
 async function login() {
     if (document.getElementById("usernameLog").value == "" ||
         document.getElementById("passwordLog").value == "") {
@@ -28,19 +27,17 @@ async function login() {
             redirect: 'follow'
         };
 
-        fetch("http://localhost:2001/login", requestOptions)
+        await fetch("http://localhost:2001/login", requestOptions)
             .then(response => response.json())
             .then(result => {
                 if (result.status == 1) {
-                    window.location.replace('../views/home.html');
+                    window.location.href ='../views/home.html';
                 }
                 else {
                     alert(result.responseMessage);
                 }
             })
             .catch(error => console.log('error', error));
-        
-        selectGasto();
     }
 }
 
@@ -168,11 +165,10 @@ async function selectGasto(){
 
                     let nrow = results.responseBody.rowCount;
                     let rowArray = results.responseBody.rows;
-
+            
                     let table = document.getElementById('tablegastos');
                     var flag = true;
-                    console.log(table.rows.length);
-    
+                    
                     for (let index = 0; index < nrow ; index++) {
                         flag = true;
 
@@ -186,7 +182,7 @@ async function selectGasto(){
                             addRow('tablegastos', rowArray[index].id, rowArray[index].nome, rowArray[index].valor, rowArray[index].dtvenc);
                         }
                     }
-            } else {
+                } else {
                 
             }
         })
@@ -194,4 +190,29 @@ async function selectGasto(){
 
 }
 
-//addRow('tablegastos', rowArray[index].id, rowArray[index].nome, rowArray[index].valor, rowArray[index].dtvenc);
+async function excGasto(){
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+    "myData": {
+        "Gasto": {
+        "id": document.getElementById('idGasto').value
+        }
+    }
+    });
+
+    var requestOptions = {
+    method: 'DELETE',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+    };
+
+    fetch("http://localhost:2001/excluirGastos", requestOptions)
+    .then(response => response.text())
+        .then(result => {
+            window.location.reload();
+    })
+    .catch(error => console.log('error', error));
+}

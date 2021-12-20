@@ -18,7 +18,15 @@ app.get('/register', async (req, res) => {
     res.send("Está API está disponivel apenas para Requisições do tipo POST");
 });
 
+app.get('/gastos', async (req, res) => {
+    res.send("Está API está disponivel apenas para Requisições do tipo POST");
+});
+
 app.get('/registerGasto', async (req, res) => {
+    res.send("Está API está disponivel apenas para Requisições do tipo POST");
+});
+
+app.get('/excluirGasto', async (req, res) => {
     res.send("Está API está disponivel apenas para Requisições do tipo POST");
 });
 
@@ -46,6 +54,13 @@ app.post('/registerGasto', async (req, res) => {
     let jsonReq = req.body;
     console.log(jsonReq)
     let resp = await registerGasto(jsonReq.myData.Gasto.Nome, jsonReq.myData.Gasto.Valor, jsonReq.myData.Gasto.Datavenc, jsonReq.myData.Gasto.User);
+    console.log(resp);
+    res.json(resp);
+});
+
+app.delete('/excluirGastos', async (req, res) => {
+    let jsonReq = req.body;
+    let resp = await excgasto(jsonReq.myData.Gasto.id);
     console.log(resp);
     res.json(resp);
 });
@@ -264,6 +279,56 @@ async function selectTablesGastos(username) {
         console.log('Seleção completa');
 
         return results;
+    } catch (error) {
+        return json = {
+            status: 0,
+            responseMessage: '' + error
+        }
+    }
+
+
+}
+
+async function excgasto(id) {
+    var results;
+    results = await deleteTablesGastos(id);
+    console.log(results)
+    try {
+        if (results.rowCount > 0) {
+            var json = {
+                status: 1,
+                responseBody: results
+            }
+            return json;
+        }
+        else {
+            var json = {
+                status: 0,
+                responseMessage: 'Não foi possivel excluir estes gasto'
+            }
+            return json;
+        }
+    } catch (error) {
+        return json = {
+            status: 0,
+            responseMessage: 'Houve um Erro: ' + error
+        }
+    }
+
+}
+
+async function deleteTablesGastos(id) {
+    let db = require('./ProjetoJS/public/script/db/_database');
+    await db.connect();
+
+    try {
+
+        var results;
+
+        results = await db.query('DELETE FROM "gastos" WHERE "id" = $1', [id]);
+
+        return results;
+
     } catch (error) {
         return json = {
             status: 0,

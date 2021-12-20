@@ -30,6 +30,7 @@ td {
 .gastostittle {
 	margin-left: 35%;
 }
+
 .container {
 	display: inline-block;
 	height: 500px;
@@ -41,7 +42,7 @@ td {
 	color: rgb(168, 116, 189);
 }
 .idgasto {
-	width: auto;
+	width: 15px;
 	padding-right: 10px;
 }
 
@@ -50,6 +51,12 @@ td {
 	padding: 16px;
 	background-color: rgb(255, 255, 255, 0.6);
 	margin-left: 15%;
+}
+.boxExc {
+	display: inline-block;
+	padding: 16px;
+	background-color: rgb(255, 255, 255, 0.6);
+	margin-left: 40%;
 }
 .clearfix {
 	margin-top: 25px;
@@ -77,7 +84,17 @@ td {
 }
 .addGasto {
 	margin-top: 30px;
-	margin-left: 47%;
+	margin-left: 37.5%;
+	width: 100px;
+	height: 50px;
+	font-size: 18px;
+	background-color: rgb(168, 116, 189);
+	color: white;
+	border: none;
+}
+.excGasto {
+	margin-top: 30px;
+	margin-left: 5%;
 	width: 100px;
 	height: 50px;
 	font-size: 18px;

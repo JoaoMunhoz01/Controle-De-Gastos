@@ -44,7 +44,7 @@
         
                 <label for="email"><b>Data de vencimento</b></label>
                 <input type="text" placeholder="Informe o dia de vencimento do gasto" id="dtvencGasto" name="email" required>
-        
+                <script src="../script/starthome.js"></script>
                 <div class="clearfix">
                   <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancelar</button>
                   <button type="button" onclick="addGasto()" class="addgastobtn">Cadastrar gasto</button>
@@ -52,7 +52,26 @@
               </div>
             </form>
           </div>
+          <div id="id04" class="modal">
+            <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <form class="modal-content" action="/action_page.php">
+              <div class="boxExc">
+                <h1>Excluir gasto</h1>
+                <hr>
+          
+                <label for="email"><b>ID</b></label>
+                <input type="text" placeholder="confirme o ID do gasto a ser excluido" id="idGasto" name="id" required>
+
+                <div class="clearfix">
+                  <button type="button" onclick="document.getElementById('id04').style.display='none'"
+                    class="cancelbtn">Cancelar</button>
+                  <button type="button" onclick="excGasto()" class="excgastobtn">Excluir gasto</button>
+                </div>
+              </div>
+            </form>
+          </div>
         <button type="button" class="addGasto" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Adicionar Gasto</button>
+        <button type="button" class="excGasto" onclick="document.getElementById('id04').style.display='block'" style="width:auto;">Excluir Gasto</button>
     </div>
 </body>
 

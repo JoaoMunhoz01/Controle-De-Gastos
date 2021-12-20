@@ -20,10 +20,18 @@ var mod2 = document.getElementById('id03');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == mod) {
+    if (event.target == mod2) {
         mod2.style.display = "none";
     }
 } 
+var mod3 = document.getElementById('id04');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == mod3) {
+        mod3.style.display = "none";
+    }
+}
 
 function addRow(tableID, val, val1, val2, val3) {
 
