@@ -1,148 +1,178 @@
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    padding-left: 40%;
-    background-repeat: no-repeat;
-    background-position-x: 50%;
-    background-position-y: 50%;
+	font-family: Arial, Helvetica, sans-serif;
+	background-repeat: no-repeat;
+	background-position-x: 50%;
+	background-position-y: 50%;
 }
 
-.index{
-  margin-top: 575px;
+.welcome {
+	margin-left: 20%;
+	margin-top: 7%;
+	height: 500px;
+	width: 60%;
+	background-color: rgb(255, 255, 255, 0.4);
+	border-radius: 25px;
 }
-
+.buttonBox {
+	display: flex;
+	justify-content: center;
+	padding-top: 5%;
+}
+.space {
+	padding-top: 7%;
+}
+.btnspace {
+	width: 10px;
+}
+.slogan {
+	background-image: url("https://anasieben.com.br/wp-content/uploads/revslider/comingsoon/welcome.png");
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-position-y: top;
+	margin-left: 12%;
+	background-color: rgb(0, 0, 0, 0);
+	height: 300px;
+	width: 600px;
+}
 /* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+input[type="text"],
+input[type="password"] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
 }
 
 /* Set a style for all buttons */
 button {
-  background-color: #a184d6;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
+	background-color: rgba(78, 169, 255, 0.01);
+	border-radius: 25px;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
 }
 
-
-
 button:hover {
-  opacity: 0.8;
+	opacity: 0.8;
 }
 
 /* Extra styles for the cancel button */
 .cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
+	width: auto;
+	padding: 10px 18px;
+	background-color: #f44336;
 }
 
 /* Center the image and position the close button */
 .imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
+	text-align: center;
+	margin: 24px 0 12px 0;
+	position: relative;
 }
-b{
-  color: #ffffff;
+b {
+	color: #ffffff;
 }
-h1{
-  color: #ffffff;
+h1 {
+	color: #ffffff;
 }
-p{
-  color: #ffffff;
-}
-
-.psw{
-  color: #ffffff;
+p {
+	color: #ffffff;
 }
 
+.psw {
+	color: #ffffff;
+}
 
 img.avatar {
-  width: 40%;
-  border-radius: 50%;
+	width: 40%;
+	border-radius: 50%;
 }
 
 .container {
-  padding: 16px;
-  background-color: 255, 255, 255, 0.4;
+	padding: 16px;
+	background-color: 255, 255, 255, 0.4;
 }
 
 span.psw {
-  float: right;
-  padding-top: 16px;
+	float: right;
+	padding-top: 16px;
 }
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+	padding-top: 60px;
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: rgba(255, 255, 255, 0.4);;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+	background-color: rgba(255, 255, 255, 0.4);
+	margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
 .close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
+	position: absolute;
+	right: 25px;
+	top: 0;
+	color: #000;
+	font-size: 35px;
+	font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: red;
-  cursor: pointer;
+	color: red;
+	cursor: pointer;
 }
 
 /* Add Zoom Animation */
 .animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
+	-webkit-animation: animatezoom 0.6s;
+	animation: animatezoom 0.6s;
 }
 
 @-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
+	from {
+		-webkit-transform: scale(0);
+	}
+	to {
+		-webkit-transform: scale(1);
+	}
 }
-  
+
 @keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
 }
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
+	span.psw {
+		display: block;
+		float: none;
+	}
+	.cancelbtn {
+		width: 100%;
+	}
 }
