@@ -10,7 +10,7 @@ body {
 	margin-top: 7%;
 	height: 500px;
 	width: 60%;
-	background-color: rgb(255, 255, 255, 0.4);
+	background-color: rgb(255, 255, 255, 0.01);
 	border-radius: 25px;
 }
 .buttonBox {
