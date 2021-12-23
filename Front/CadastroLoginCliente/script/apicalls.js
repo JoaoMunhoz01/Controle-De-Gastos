@@ -11,7 +11,7 @@ async function login() {
         var raw = JSON.stringify({
             "myCredentials": {
                 "Person": {
-                    "User": Encrypt(document.getElementById("usernameLog").value),
+                    "User": document.getElementById("usernameLog").value,
                     "Password": document.getElementById("passwordLog").value,
                 }
             }
@@ -58,7 +58,7 @@ async function register() {
                 "myData": {
                     "Person": {
                         "User": document.getElementById("usernameReg").value,
-                        "Password": Encrypt(document.getElementById("passwordReg").value),
+                        "Password": document.getElementById("passwordReg").value,
                         "fName": document.getElementById("fNameReg").value,
                         "lName": document.getElementById("lNameReg").value
                     }

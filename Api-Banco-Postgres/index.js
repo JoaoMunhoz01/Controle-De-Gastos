@@ -32,7 +32,7 @@ app.get('/excluirGasto', async (req, res) => {
 
 app.post('/login', async (req, res) => {
     let jsonReq = req.body;
-    let resp = await login(jsonReq.myCredentials.Person.User, jsonReq.myCredentials.Person.Password);
+    let resp = await login(jsonReq.myCredentials.Person.User, Encrypt(jsonReq.myCredentials.Person.Password));
     console.log(resp);
     res.json(resp);
 });
@@ -46,7 +46,7 @@ app.post('/gastos', async (req, res) => {
 
 app.post('/register', async (req, res) => {
     let jsonReq = req.body;
-    let resp = await register(jsonReq.myData.Person.User, jsonReq.myData.Person.Password, jsonReq.myData.Person.fName, jsonReq.myData.Person.lName);
+    let resp = await register(jsonReq.myData.Person.User, Encrypt(jsonReq.myData.Person.Password), jsonReq.myData.Person.fName, jsonReq.myData.Person.lName);
     console.log(resp);
     res.json(resp);
 });
@@ -335,6 +335,17 @@ async function deleteTablesGastos(id) {
             responseMessage: '' + error
         }
     }
+}
 
-
+function Encrypt(value) {
+  var result="";
+  for(i=0;i<value.length;i++){
+    if(i<value.length-1){
+        result+=value.charCodeAt(i)*73;
+    }
+    else{
+        result+=value.charCodeAt(i)*73;
+    }
+  }
+  return result;
 }
