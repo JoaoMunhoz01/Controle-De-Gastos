@@ -71,20 +71,32 @@ function addRow(tableID, val, val1, val2, val3) {
     newCell3.appendChild(newText3);
 }
 
-function Encrypt(value) 
-{
+function Encrypt(value) {
   var result="";
-  for(i=0;i<value.length;i++)
-  {
-    if(i<value.length-1)
-    {
+  for(i=0;i<value.length;i++){
+    if(i<value.length-1){
         result+=value.charCodeAt(i)+10;
         result+="-";
     }
-    else
-    {
+    else{
         result+=value.charCodeAt(i)+10;
     }
   }
   return result;
+}
+function bgNone(val) {
+    document.getElementById('buttonBox').style.display = 'none';
+    if (val) {
+        document.getElementById('id01').style.display = 'block'
+    } else {
+        document.getElementById('id02').style.display = 'block'
+    }
+}
+function bgBlock(val) {
+    document.getElementById('buttonBox').style.display = 'flex';
+    if (val) {
+        document.getElementById('id01').style.display = 'none'
+    } else {
+        document.getElementById('id02').style.display = 'none'
+    }
 }

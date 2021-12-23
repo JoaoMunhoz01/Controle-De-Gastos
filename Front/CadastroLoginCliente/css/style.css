@@ -65,7 +65,22 @@ button:hover {
 .cancelbtn {
 	width: auto;
 	padding: 10px 18px;
-	background-color: #f44336;
+	background-color: #222222;
+	opacity: 0.5;
+}
+.loginbtn {
+	width: auto;
+	padding: 10px 18px;
+	background-color: #222222;
+	opacity: 0.5;
+	margin-right: 10px;
+}
+.signupbtn {
+	opacity: 0.5;
+	width: auto;
+	padding: 10px 18px;
+	background-color: #222222;
+	opacity: 0.5;
 }
 
 /* Center the image and position the close button */
@@ -97,9 +112,12 @@ img.avatar {
 	padding: 16px;
 	background-color: 255, 255, 255, 0.4;
 }
+.containerbtns {
+	margin-left: 36.75%;
+	background-color: 255, 255, 255, 0.4;
+}
 
 span.psw {
-	float: right;
 	padding-top: 16px;
 }
 
@@ -115,7 +133,6 @@ span.psw {
 	overflow: auto; /* Enable scroll if needed */
 	background-color: rgb(0, 0, 0); /* Fallback color */
 	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-	padding-top: 60px;
 }
 
 /* Modal Content/Box */
@@ -123,7 +140,7 @@ span.psw {
 	background-color: rgba(255, 255, 255, 0.4);
 	margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
 	border: 1px solid #888;
-	width: 80%; /* Could be more or less, depending on screen size */
+	width: 50%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -135,11 +152,26 @@ span.psw {
 	font-size: 35px;
 	font-weight: bold;
 }
+.closeCad {
+	position: absolute;
+	right: 26%;
+	color: #000;
+	font-size: 35px;
+	font-weight: bold;
+}
 
 .close:hover,
 .close:focus {
 	color: red;
 	cursor: pointer;
+}
+.closeCad:hover,
+.closeCad:focus {
+	color: red;
+	cursor: pointer;
+}
+.clearfix {
+	margin-left: 36%;
 }
 
 /* Add Zoom Animation */
