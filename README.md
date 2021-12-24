@@ -25,6 +25,8 @@ LOGIN
 
 http://localhost:2001/login
 
+Tipo:POST
+
 Para login a API espera receber um body semelhante a este:
 
 raw = {
@@ -47,6 +49,8 @@ REGISTER
 
 http://localhost:2001/register
 
+Tipo:POST
+
 Já para register a API espera receber um body semelhante a este:
 
 raw = {
@@ -68,6 +72,92 @@ raw = {
         }
         
     };
+
+Adicionar Gastos
+
+http://localhost:2001/gastos
+
+Já para gastos a API espera receber um body semelhante a este:
+
+Tipo:POST
+
+var raw = {
+
+        "myData": {
+        
+                "Gasto": {
+                
+                    "Nome": 'Nome',
+                    
+                    "Valor": 'Valor',
+                    
+                    "Datavenc":'Datavenc',
+                    
+                    "User":'User'
+                
+                }
+        
+        }
+
+}
+        
+Select Gastos
+
+Para Select gastos a API espera receber um body semelhante a este:
+
+Tipo:POST
+
+raw = {
+
+        "myData": {
+        
+            "Gasto": {
+            
+            "User": "You username"
+            
+            }
+            
+        }
+        
+    }
+    
+Para Exluir gastos a API espera receber um body semelhante a este:
+
+Tipo:DELETE 
+
+raw = {
+
+          "myData": {
+          
+                "Gasto": {
+                
+                "id": "Id gasto"
+                
+                }
+                
+          }
+          
+    }
+    
+Para alterar senha a API espera receber um body semelhante a este:
+
+Tipo:POST
+
+raw = {
+
+        "myData": {
+        
+                    "Person": {
+                    
+                    "User": document.getElementById("usernameUpdt").value,
+                    
+                    "Password": document.getElementById("passwordUpdt").value
+                    
+                    }
+                    
+                }
+
+}
  
 # FRONT
 
