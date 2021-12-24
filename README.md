@@ -73,7 +73,7 @@ raw = {
         
     };
 
-Gastos
+Adicionar Gastos
 
 http://localhost:2001/gastos
 
@@ -83,15 +83,23 @@ Tipo:POST
 
 var raw = {
 
-            "Nome": "Nome do gasto",
-            
-            "Valor": "Valor",
-            
-            "Datavenc": "Data de vencimento",
-            
-            "User": "You Username"
-            
+        "myData": {
+        
+                "Gasto": {
+                
+                    "Nome": 'Nome',
+                    
+                    "Valor": 'Valor',
+                    
+                    "Datavenc":'Datavenc',
+                    
+                    "User":'User'
+                
+                }
+        
         }
+
+}
         
 Select Gastos
 
