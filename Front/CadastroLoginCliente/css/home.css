@@ -12,9 +12,19 @@ tr {
 	width: auto;
 }
 td {
+	font-weight: normal;
 	width: 25%;
 }
-
+.fieldsgasto {
+	font-weight: bold;
+}
+.sair {
+	margin-left: 95%;
+	font-size: 20px;
+	background-color: rgb(0, 0, 0, 0);
+	color: white;
+	border: none;
+}
 .space {
 	height: 10px;
 }

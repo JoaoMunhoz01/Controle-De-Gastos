@@ -99,3 +99,7 @@ function fgtpsw(val) {
 
 
 }
+
+function Sair() {
+    window.location.href ='../index.html';
+}
