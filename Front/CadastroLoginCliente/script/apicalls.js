@@ -109,14 +109,14 @@ async function addGasto(){
         document.getElementById("dtvencGasto").value = "";
 
         var raw =  JSON.stringify({
-        "myData": {
-            "Gasto": {
-                "Nome": teste.Nome,
-                "Valor": teste.Valor,
-                "Datavenc": teste.Datavenc,
-                "User": teste.User
+            "myData": {
+                "Gasto": {
+                    "Nome": teste.Nome,
+                    "Valor": teste.Valor,
+                    "Datavenc": teste.Datavenc,
+                    "User": teste.User
+                }
             }
-        }
         });
 
         var requestOptions = {
@@ -130,62 +130,12 @@ async function addGasto(){
         .then(response => response.json())
             .then(results => {
                 if (results.status == 1) {
-                selectGasto();
+                    window.location.reload();
             } else {
             }
         })
         .catch(error => console.log('error', error));
     }
-}
-async function selectGasto(){
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    var raw = JSON.stringify({
-    "myData": {
-        "Gasto": {
-        "User": "joao.munhoz"
-        }
-    }
-    });
-
-    var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
-    };
-
-    await fetch("http://localhost:2001/gastos", requestOptions)
-        .then(response => response.json())
-            .then(results => {
-                if (results.status == 1) {
-
-                    let nrow = results.responseBody.rowCount;
-                    let rowArray = results.responseBody.rows;
-            
-                    let table = document.getElementById('tablegastos');
-                    var flag = true;
-                    
-                    for (let index = 0; index < nrow ; index++) {
-                        flag = true;
-
-                        for (let index1 = 2; index1 < table.rows.length; index1++) {
-                            
-                            if (table.rows[index1].cells[0].firstChild.data == rowArray[index].id) {
-                                flag = false;
-                            } 
-                        }
-                        if (flag) {
-                            addRow('tablegastos', rowArray[index].id, rowArray[index].nome, rowArray[index].valor, rowArray[index].dtvenc);
-                        }
-                    }
-                } else {
-                
-            }
-        })
-        .catch(error => console.log('error', error));
-
 }
 async function excGasto(){
     var myHeaders = new Headers();
@@ -227,12 +177,12 @@ async function fgtPassword() {
             myHeaders.append("Content-Type", "application/json");
 
             var raw = JSON.stringify({
-            "myData": {
-                "Person": {
-                "User": document.getElementById("usernameUpdt").value,
-                "Password": document.getElementById("passwordUpdt").value
+                "myData": {
+                    "Person": {
+                    "User": document.getElementById("usernameUpdt").value,
+                    "Password": document.getElementById("passwordUpdt").value
+                    }
                 }
-            }
             });
 
             var requestOptions = {

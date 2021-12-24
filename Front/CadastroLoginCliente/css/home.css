@@ -1,7 +1,7 @@
 body {
-	background-image: url("https://cdna.artstation.com/p/assets/images/images/039/293/002/large/lisa-sofie-lang-dark-mountains.jpg?1625502339");
+	background-image: url("../img/Webp.net-resizeimage.jpg");
 	background-position-x: center;
-	background-position-y: center;
+	background-position-y: 35%;
 	background-repeat: no-repeat;
 }
 table {
@@ -12,7 +12,7 @@ tr {
 	width: auto;
 }
 td {
-	width: 33.3%;
+	width: 25%;
 }
 
 .space {
@@ -34,16 +34,17 @@ td {
 
 .container {
 	display: inline-block;
-	height: 500px;
-	width: 97%;
-	margin-top: 75px;
-	margin-left: 20px;
+	height: 530px;
+	width: 70.5%;
+	margin-top: 50px;
+	margin-left: 200px;
 	margin-right: 20px;
 	background-color: rgb(255, 255, 255, 0.3);
 	color: rgb(128, 128, 226);
+	border-radius: 30px;
 }
 .idgasto {
-	width: 15px;
+	width: auto;
 	padding-right: 10px;
 }
 

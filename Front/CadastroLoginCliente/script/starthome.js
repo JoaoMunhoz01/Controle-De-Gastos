@@ -1,13 +1,13 @@
-
+async function selectGasto(){
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
     var raw = JSON.stringify({
-    "myData": {
-        "Gasto": {
-            "User": 'joao.munhoz'
+        "myData": {
+            "Gasto": {
+            "User": "joao.munhoz"
+            }
         }
-    }
     });
 
     var requestOptions = {
@@ -17,7 +17,7 @@
     redirect: 'follow'
     };
 
-     fetch("http://localhost:2001/gastos", requestOptions)
+    await fetch("http://localhost:2001/gastos", requestOptions)
         .then(response => response.json())
             .then(results => {
                 if (results.status == 1) {
@@ -46,3 +46,6 @@
             }
         })
         .catch(error => console.log('error', error));
+
+}
+selectGasto();
