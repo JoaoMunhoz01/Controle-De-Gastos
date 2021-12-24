@@ -172,7 +172,7 @@ async function fgtPassword() {
         if (document.getElementById("passwordUpdt").value != document.getElementById("passwordUpdtConf").value) {
             alert('As senhas não correspondem');
         } else { 
-
+            fgtpsw(0);
             var myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
 

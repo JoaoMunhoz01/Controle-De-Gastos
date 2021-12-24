@@ -1,6 +1,5 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
-	background-repeat: no-repeat;
 	background-position-x: 50%;
 	background-position-y: 50%;
 }
@@ -10,7 +9,7 @@ body {
 	margin-top: 7%;
 	height: 500px;
 	width: 60%;
-	background-color: rgb(255, 255, 255, 0.01);
+	background-color: rgb(255, 255, 255, 0);
 	border-radius: 25px;
 }
 .buttonBox {

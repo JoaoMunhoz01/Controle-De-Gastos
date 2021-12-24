@@ -25,11 +25,11 @@ td {
 	font-size: 48px;
 	display: flex;
 	justify-content: center;
-	color: aliceblue;
+	color: white;
 }
 .gastostittle {
-	margin-left: 35%;
-	color: aliceblue;
+	margin-left: 25%;
+	color: white;
 }
 
 .container {
@@ -40,7 +40,8 @@ td {
 	margin-left: 200px;
 	margin-right: 20px;
 	background-color: rgb(255, 255, 255, 0.3);
-	color: rgb(128, 128, 226);
+	color: #222222;
+	font-weight: bold;
 	border-radius: 30px;
 }
 .idgasto {
@@ -69,39 +70,41 @@ td {
 .clearfix button {
 	width: auto;
 	height: 50px;
-	background-color: rgb(128, 128, 226);
+	background-color: #222222;
 	color: white;
 	border: none;
 	border-radius: 15px;
 }
 .table {
+	padding: 15px;
 	background-color: rgb(255, 255, 255, 0.5);
 	margin-left: 10px;
 	margin-right: 10px;
 	height: 60%;
-	width: 98.5%;
+	width: 94.5%;
 	position: relative;
 	overflow: scroll;
 	overflow-x: hidden;
+	border-radius: 30px;
 }
 .addGasto {
 	margin-top: 30px;
-	margin-left: 37.5%;
+	margin-left: 32%;
 	width: 100px;
 	height: 50px;
 	font-size: 18px;
-	background-color: rgb(128, 128, 226);
+	background-color: #222222;
 	color: white;
 	border: none;
 	border-radius: 15px;
 }
 .excGasto {
 	margin-top: 30px;
-	margin-left: 5%;
+	margin-left: 1%;
 	width: 100px;
 	height: 50px;
 	font-size: 18px;
-	background-color: rgb(128, 128, 226);
+	background-color: #222222;
 	color: white;
 	border: none;
 	border-radius: 15px;
