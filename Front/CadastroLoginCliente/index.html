@@ -6,7 +6,7 @@
     <script src="./script/main.js"></script>
     <script src="./script/apicalls.js"></script>
   </head>
-  <body background="https://5287aa00874a313e299d-1850966fc307ff23e1e789aeafd2476b.ssl.cf5.rackcdn.com/PostImagem/34245/fotos-de-paisagens_o1f9f3i2n715u211eeesevg41afbe.jpg">
+  <body background="https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-02.jpg">
 
   <div class="welcome">
     <div class="space"></div>
@@ -22,7 +22,6 @@
   </div>
 
   <div id="id01" class="modal">
-    
     <form class="modal-content animate" action="/action_page.php" method="post">
       <div class="imgcontainer">
         <span onclick="bgBlock(1)" class="close" title="Close Modal">&times;</span>
@@ -31,12 +30,12 @@
 
       <div class="container">
         <label for="uname"><b>Email</b></label>
-        <input type="text" placeholder="Insira seu email" name="uname" id="usernameLog" required>
+        <input type="text" placeholder="Insira seu email" name="uname" id="usernameLog" >
 
         <label for="psw"><b>Senha</b></label>
-        <input type="password" placeholder="Insira sua senha" name="psw" id="passwordLog" required>
+        <input type="password" placeholder="Insira sua senha" name="psw" id="passwordLog" >
           
-        <span class="psw">Esqueceu sua <a href="#">Senha?</a></span>
+        <input class="fgtbtnpsw" type="button" onclick="fgtpsw(1)" value="Esqueceu sua senha?">
       </div>
 
       <div class="containerbtns" >
@@ -83,5 +82,34 @@
       </div>
     </form>
   </div>
+
+  <div id="id05" class="modal">
+    <form class="modal-content" action="/action_page.php">
+      <span onclick="fgtpsw(0)" class="closeFgtPsw" title="Close Modal">&times;</span>
+      <div class="container">
+  
+        <h1>Redefinir Senha</h1>
+        <p>Preencha o formulário para criar sua conta.</p>
+        <hr>
+  
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Insira seu email" id="usernameUpdt" name="email" required>
+  
+        <label for="psw"><b>Senha</b></label>
+        <input type="password" placeholder="Insira sua senha" id="passwordUpdt" name="psw" required>
+  
+        <label for="psw-repeat"><b>Confirmar Senha</b></label>
+        <input type="password" placeholder="Confirme sua senha" id="passwordUpdtConf" name="psw-repeat" required>
+  
+        <div class="clearfix">
+  
+          <button type="button" onclick="fgtPassword()" class="signupbtn">Redefinir</button>
+          <button type="button" onclick="fgtpsw(0)" class="cancelbtn">Cancelar</button>
+  
+        </div>
+      </div>
+    </form>
+  </div>
+  
   </body>
 </html>

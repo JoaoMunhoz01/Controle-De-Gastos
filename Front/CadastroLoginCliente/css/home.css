@@ -1,5 +1,5 @@
 body {
-	background-image: url("https://5287aa00874a313e299d-1850966fc307ff23e1e789aeafd2476b.ssl.cf5.rackcdn.com/PostImagem/34245/fotos-de-paisagens_o1f9f3i2n715u211eeesevg41afbe.jpg");
+	background-image: url("https://cdna.artstation.com/p/assets/images/images/039/293/002/large/lisa-sofie-lang-dark-mountains.jpg?1625502339");
 	background-position-x: center;
 	background-position-y: center;
 	background-repeat: no-repeat;
@@ -29,17 +29,18 @@ td {
 }
 .gastostittle {
 	margin-left: 35%;
+	color: aliceblue;
 }
 
 .container {
 	display: inline-block;
 	height: 500px;
 	width: 97%;
-	margin-top: 50px;
+	margin-top: 75px;
 	margin-left: 20px;
 	margin-right: 20px;
 	background-color: rgb(255, 255, 255, 0.3);
-	color: rgb(168, 116, 189);
+	color: rgb(128, 128, 226);
 }
 .idgasto {
 	width: 15px;
@@ -67,9 +68,10 @@ td {
 .clearfix button {
 	width: auto;
 	height: 50px;
-	background-color: rgb(168, 116, 189);
+	background-color: rgb(128, 128, 226);
 	color: white;
 	border: none;
+	border-radius: 15px;
 }
 .table {
 	background-color: rgb(255, 255, 255, 0.5);
@@ -87,9 +89,10 @@ td {
 	width: 100px;
 	height: 50px;
 	font-size: 18px;
-	background-color: rgb(168, 116, 189);
+	background-color: rgb(128, 128, 226);
 	color: white;
 	border: none;
+	border-radius: 15px;
 }
 .excGasto {
 	margin-top: 30px;
@@ -97,9 +100,10 @@ td {
 	width: 100px;
 	height: 50px;
 	font-size: 18px;
-	background-color: rgb(168, 116, 189);
+	background-color: rgb(128, 128, 226);
 	color: white;
 	border: none;
+	border-radius: 15px;
 }
 span.psw {
 	float: right;

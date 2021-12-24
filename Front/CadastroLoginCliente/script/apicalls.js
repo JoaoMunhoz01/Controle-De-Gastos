@@ -40,7 +40,6 @@ async function login() {
             .catch(error => console.log('error', error));
     }
 }
-
 async function register() {
     if (document.getElementById("usernameReg").value == "" ||
         document.getElementById("passwordReg").value == "" ||
@@ -86,7 +85,6 @@ async function register() {
         }
     }
 }
-
 async function addGasto(){
     if (document.getElementById("nomeGasto").value == "" ||
         document.getElementById("valGasto").value == "" ||
@@ -189,7 +187,6 @@ async function selectGasto(){
         .catch(error => console.log('error', error));
 
 }
-
 async function excGasto(){
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -215,4 +212,40 @@ async function excGasto(){
             window.location.reload();
     })
     .catch(error => console.log('error', error));
+}
+async function fgtPassword() {  
+    if (document.getElementById("usernameUpdt").value == "" ||
+        document.getElementById("passwordUpdt").value == "" ||
+        document.getElementById("passwordUpdtConf").value == "") {
+        alert("Preencha os campos");
+    } else {
+        if (document.getElementById("passwordUpdt").value != document.getElementById("passwordUpdtConf").value) {
+            alert('As senhas não correspondem');
+        } else { 
+
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+            "myData": {
+                "Person": {
+                "User": document.getElementById("usernameUpdt").value,
+                "Password": document.getElementById("passwordUpdt").value
+                }
+            }
+            });
+
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+            };
+
+            fetch("http://localhost:2001/updatePassword", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+                    }
+                }
 }

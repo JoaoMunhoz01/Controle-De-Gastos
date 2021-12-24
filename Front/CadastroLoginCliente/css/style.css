@@ -82,7 +82,18 @@ button:hover {
 	background-color: #222222;
 	opacity: 0.5;
 }
-
+.fgtbtnpsw {
+	background-color: rgb(255, 255, 255, 0);
+	color: white;
+	border: none;
+}
+.closeFgtPsw {
+	position: absolute;
+	right: 26%;
+	color: #000;
+	font-size: 35px;
+	font-weight: bold;
+}
 /* Center the image and position the close button */
 .imgcontainer {
 	text-align: center;
@@ -159,7 +170,11 @@ span.psw {
 	font-size: 35px;
 	font-weight: bold;
 }
-
+.closeFgtPsw:hover,
+.closeFgtPsw:focus {
+	color: red;
+	cursor: pointer;
+}
 .close:hover,
 .close:focus {
 	color: red;

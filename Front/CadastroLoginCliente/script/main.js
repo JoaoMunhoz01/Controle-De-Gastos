@@ -87,3 +87,15 @@ function bgBlock(val) {
         document.getElementById('id02').style.display = 'none'
     }
 }
+
+function fgtpsw(val) {
+    if (val == 1) {
+        document.getElementById('id01').style.display = 'none';
+        document.getElementById('id05').style.display = 'block';
+    }else {
+        document.getElementById('id01').style.display = 'block';
+        document.getElementById('id05').style.display = 'none';
+    }
+
+
+}
