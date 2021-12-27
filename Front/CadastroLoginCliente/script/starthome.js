@@ -1,11 +1,26 @@
-async function selectGasto(){
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+async function selectGasto() {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
     var raw = JSON.stringify({
         "myData": {
             "Gasto": {
-            "User": "joao.munhoz"
+                "User": getCookie("username")
             }
         }
     });
@@ -48,4 +63,5 @@ async function selectGasto(){
         .catch(error => console.log('error', error));
 
 }
+
 selectGasto();

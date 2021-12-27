@@ -1,3 +1,4 @@
+
 // Get the modal
 var modal = document.getElementById('id01');
 
@@ -32,6 +33,8 @@ window.onclick = function(event) {
         mod3.style.display = "none";
     }
 }
+
+
 
 function addRow(tableID, val, val1, val2, val3) {
 
@@ -101,5 +104,30 @@ function fgtpsw(val) {
 }
 
 function Sair() {
+    let data = 'Wed, 01 Jan 2000 02:00:00 GMT';
+    apaga_cookie("username");
     window.location.href ='../index.html';
+}
+function apaga_cookie(nome){
+    
+    var data = new Date(2010,0,01);
+   
+    data = data.toGMTString();
+  
+    document.cookie = nome + '=; expires=' + data + '; path=/';
+}
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
 }

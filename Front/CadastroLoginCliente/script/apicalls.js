@@ -17,8 +17,7 @@ async function login() {
             }
         });
 
-        document.getElementById("usernameLog").value ="";
-        document.getElementById("passwordLog").value = "";
+        
 
         var requestOptions = {
             method: 'POST',
@@ -30,16 +29,23 @@ async function login() {
         await fetch("http://localhost:2001/login", requestOptions)
             .then(response => response.json())
             .then(result => {
-                if (result.status == 1) {
-                    window.location.href ='../views/home.html';
+                if (result.status == 1) {    
+                    checkCookie();
+                    window.location.href = '../views/home.html';
+                    
                 }
                 else {
                     alert(result.responseMessage);
                 }
             })
-            .catch(error => console.log('error', error));
+            .catch(error => {
+                console.log('error', error);
+                document.getElementById("usernameLog").value ="";
+                document.getElementById("passwordLog").value = "";
+            } );
     }
 }
+
 async function register() {
     if (document.getElementById("usernameReg").value == "" ||
         document.getElementById("passwordReg").value == "" ||

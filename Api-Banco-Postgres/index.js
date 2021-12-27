@@ -282,7 +282,7 @@ async function selectTablesGastos(username) {
 
         var results;
 
-        results = await db.query(`SELECT * FROM gastos WHERE gastos.username='${username}' ORDER BY gastos.id ASC`);
+        results = await db.query(`SELECT * FROM gastos WHERE gastos.username='${username}' ORDER BY gastos.dtvenc ASC`);
 
 
 
