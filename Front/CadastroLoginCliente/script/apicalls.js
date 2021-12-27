@@ -107,7 +107,7 @@ async function addGasto(){
             "Nome": document.getElementById("nomeGasto").value,
             "Valor": document.getElementById("valGasto").value,
             "Datavenc": document.getElementById("dtvencGasto").value,
-            "User": "joao.munhoz"
+            "User": getCookie("username")
         }
 
         document.getElementById("nomeGasto").value ="";
