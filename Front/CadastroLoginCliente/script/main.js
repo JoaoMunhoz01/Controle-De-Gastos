@@ -33,10 +33,13 @@ window.onclick = function(event) {
         mod3.style.display = "none";
     }
 }
-username = getCookie("username");
-if (username != "") {
-    window.location.href = '../views/home.html';
+function loadcookies() {
+    username = getCookie("username");
+    if (username != "") {
+        window.location.href = '../views/home.html';
+    }
 }
+
 
 function addRow(tableID, val, val1, val2, val3) {
 
