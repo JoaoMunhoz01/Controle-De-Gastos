@@ -1,20 +1,21 @@
+const { Pool } = require('pg');
+
+const pool = new Pool({
+        user: 'postgres',
+        host: 'localhost',
+        database: 'controlegastos',
+        password: 'postgres',
+        port: 5432
+    });
+
 const pg = require('pg');
 
 const client = new pg.Client({
     user: 'postgres',
     host: 'localhost',
-    database: 'projetojs',
-    password: 'Senha1234',
-    port: 5432,
+    database: 'controlegastos',
+    password: 'postgres',
+    port: 5432
 });
 
-const { Pool } = require('pg')
-const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'projetojs',
-    password: 'Senha1234',
-    port: 5432,
-})
-
-module.exports = pool;
+module.exports = client;
