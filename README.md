@@ -1,4 +1,4 @@
-# PROJETO-API-PGSQL
+# Controle de Gastos
 
 Neste projetos supomos que você já possua o postgres instalado e configurado,
 não se esqueça de alterar as configurações de conexão com o banco, as configurações estão no arquivo:
