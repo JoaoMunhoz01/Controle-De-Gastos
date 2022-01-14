@@ -1,13 +1,16 @@
 # Controle de Gastos
 
-Neste projetos supomos que você já possua o postgres instalado e configurado,
-não se esqueça de alterar as configurações de conexão com o banco, as configurações estão no arquivo:
+Neste projetos supomos que você já possua o postgres, node e git instalado.
+
+As configurações estão no arquivo:
 
 PROJETO-API-PGSQL/Api-Banco-Postgres/ProjetoJS/public/script/db/_database.js
 
 Crie a tabela entrando na pasta raiz do projeto e rodando o comando:
 
 $ node Api-Banco-Postgres/ProjetoJS/public/script/db/create.js
+
+É possivel clonar o repositorio e startar os servidores, apenas rodando o arquivo .bat 
 
 # API
 
